@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Details </title>
+    <!-- <style>
+        .user-info {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style> -->
+</head>
+<body>
+    <h2>Student Registration Details</h2>
+    <div id="userDataDisplay"></div>
+
+    <script>
+        const displayDiv = document.getElementById('userDataDisplay');
+        const students = JSON.parse(localStorage.getItem('students')) || [];
+        
+        students.forEach(user => {
+            const userInfoDiv = document.createElement('div');
+            // userInfoDiv.classList.add('user-info');
+            userInfoDiv.innerHTML = `<p>First_Name: ${user.first_name}</p><p>Last_Name: ${user.last_name}</p><p>Gender: ${user.gender}</p><p>Date: ${user.date}</p>  <p>Email:${user.Email}</p><p>Branch:${user.Branch}</p><p>Address: ${user.address}</p><p>City :${user.city}</p><p>pin_code: ${user.pin_code}</p>`;
+            displayDiv.appendChild(userInfoDiv);
+        });
+    </script>
+</body>
+</html>
